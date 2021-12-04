@@ -24,7 +24,7 @@ class SENMF:
         """
         print("Model initialization started.\n")
 
-        orbit_path = "orca\\europeFlights_orbit.txt"   ## orca file path
+        orbit_path = "data\\europeFlights_orbit.txt"   ## orca file path
 
 
         self.computation_graph = tf.Graph()
@@ -131,7 +131,7 @@ class SENMF:
         Method to save the clusters, node representations, cluster memberships and logs.
         """
         # json_dumper(self.optimal_indices, self.args.assignment_output)
-        json_dumper(self.logs, self.args.log_output)
+        # json_dumper(self.logs, self.args.log_output)
         loss_printer(self.logs)
         if self.args.dump_matrices:
             self.optimal_clusters = pd.DataFrame(session.run(self.C, feed_dict=feed_dict),

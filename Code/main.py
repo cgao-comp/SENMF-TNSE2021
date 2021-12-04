@@ -24,7 +24,7 @@ if __name__ == "__main__":
         create_and_run_model(args)
         edges_path = 'data\\europeFlights_edges.csv'  ## file path
         label_path = "data\\europeFlights_labels.txt"
-        embedding_path = "output\\embeddings\\europeFlights_embedding.csv"
+        embedding_path = "data\\output\\embeddings\\europeFlights_embedding.csv"
         average_NMI, average_F1score, average_ARI = assessment_result.assement_result(label_path, embedding_path, args.k)
         micro, macro, accuracy = assessment_result.eval_classification(embedding_path, label_path, 0.8)
         NMI_list.append(average_NMI)
